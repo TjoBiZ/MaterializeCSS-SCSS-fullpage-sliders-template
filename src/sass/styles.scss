@@ -1,0 +1,64 @@
+header {
+ position: absolute;
+ top: 0;
+ left: 0;
+ z-index: 1001;
+ width: 100%;
+ nav {
+  transition: 0.4s;
+  opacity: 0.4;
+  &:focus,
+  &:hover {
+  opacity: 0.85;
+   transition: 0.5s;
+  }
+  @media all and (max-width: 600px) {
+   .brand-logo {
+    font-size: 20px;
+   }
+  }
+ }
+}
+@media all and (max-width: 993px) {
+ #fp-nav {
+  display: none;
+ }
+}
+//Удалить от сюда
+h1 {
+ text-align: center;
+ color: white;
+}
+.sblock1 {
+ background: url("/src/img/jpg/001.jpg");
+ background-size: cover;
+}
+.sblock2, .sblock4 {
+ background: #9ac6be;
+}
+.sblock3 {
+ background: url("/src/img/jpg/003.jpg");
+ background-size: cover;
+}
+//Удалить до сюда
+
+//style fullpage control
+#fp-nav {
+ ul {
+  position: relative;
+  &:before {
+   background: #ffffff;
+   position: absolute;
+   content: ' ';
+  width: 2px;
+  height: 85%;
+   left: 45%;
+   top:7%
+  }
+ }
+ span {
+  background: white !important;
+  border-radius: 0px !important;
+ }
+}
+
