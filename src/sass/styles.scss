@@ -114,12 +114,15 @@ header {
  .socialproperty {
   position: relative;
   height: auto;
+  padding: 0px;
   img {
-   margin: 10px 50%;
    width: 20px;
+   display: block;
+   margin: 10px;
   }
   .imgmainwrap {
    height: 100%;
+   width: 100%;
   }
   .dividerlinewrapborder {
    background: white;
@@ -134,6 +137,9 @@ header {
   }
   .btop {
    bottom: 0px;
+  }
+  .imgwrvw {
+   margin: auto;
   }
  }
   .linktomap {
