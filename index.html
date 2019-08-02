@@ -30,9 +30,52 @@
 <section class="wrapfull">
   <div id="fullpage">
     <div id="firstPage" class="sectionnav sblock1">
-      <h1>It's first block</h1>
+      <div class="row">
+        <div class="col l6 s12">
+          <div class="row">
+            <div class="language col s12">
+              <img src="/build/img/svg/united-states.svg" alt="">
+              <img src="/build/img/svg/russia.svg" alt="">
+              <img src="/build/img/svg/china.svg" alt="">
+            </div>
+            <div class="wrapBrend col s12 flexparentheight">
+                <div class="col s2 socialproperty flexchildeheight">
+                  <div class="dividerlinewrapborder dtop"></div>
+                  <div class="imgmainwrap valign-wrapper">
+                    <div class="imgwrvw">
+                      <img src="/build/img/svg/youtube-logo.svg" alt="">
+                      <img src="/build/img/svg/facebook-logo.svg" alt="">
+                      <img src="/build/img/svg/instagram.svg" alt="">
+                    </div>
+                  </div>
+                  <div class="dividerlinewrapborder btop"></div>
+                </div>
+                <div class="col s10 flexchildeheight">
+                  <div class="wrapmainproperty">
+                    <h1>Andaman Riviera</h1>
+                    <h2>О нас</h2>
+                    <div class="linehrfirst left-align"></div>
+                    <div class="infosnippet">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi at consequatur culpa
+                      pariatur quisquam voluptas. Accusantium aperiam architecto aspernatur corporis dolorem doloribus eaque
+                      eius eligendi exercitationem fuga hic ipsa labore, laudantium magnam maiores necessitatibus nisi nulla
+                      numquam pariatur quas quibusdam quisquam recusandae repellendus sed sit soluta temporibus totam veniam!
+                    </div>
+                    <a class="waves-effect waves-white btn-large modal-trigger apartmentview white" href="#">Запишитесь на просмотр квартиры</a>
+                  </div>
+                </div>
+              </div>
+            <div class="col s10 valign-wrapper row linktomap">
+              <img src="/build/img/svg/map.svg" alt="">
+                <div class="col s5 bangtaobich">Bangtao Bich</div>
+                <div class="col s3">Thailand</div>
+                <div class="col s3">Phuket</div>
+            </div>
+          </div>
+        </div>
+        <div class="col l6 s12">Блок с фотографиями</div>
+      </div>
     </div>
-    <div id="secondPage" class="sectionnav sblock2"><h1>Hello two</h1>
+    <div id="secondPage" class="sectionnav sblock2"><h1 class="htest">Section  two</h1>
       <div class="fullcontentest">
         <div class="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam aliquid, aut beatae
           commodi consequuntur cum, debitis deleniti dolorum eaque earum enim et harum hic impedit in ipsa iste laborum
@@ -126,10 +169,17 @@
           tenetur vero! Commodi consequatur dolor esse facilis ipsam libero minus molestias odit quo, rem sint unde
           voluptatibus.
         </div>
+        <img src="/build/img/svg/facebook-logo.svg" alt="">
+        <img src="/build/img/svg/youtube-logo.svg" alt="">
+        <img src="/build/img/svg/instagram.svg" alt="">
+        <img src="/build/img/svg/united-states.svg" alt="">
+        <img src="/build/img/svg/russia.svg" alt="">
+        <img src="/build/img/svg/china.svg" alt="">
+        <img src="/build/img/svg/map.svg" alt="">
       </div>
     </div>
-    <div id="thirdPage" class="sectionnav sblock3"><h1>Hello three</h1></div>
-    <div id="fourthPage" class="sectionnav sblock4"><h1>Hello four</h1></div>
+    <div id="thirdPage" class="sectionnav sblock3"><h1  class="htest">Section  three</h1></div>
+    <div id="fourthPage" class="sectionnav sblock4"><h1 class="htest">Section  four</h1></div>
   </div>
 </section>
 
@@ -153,13 +203,9 @@
         showActiveTooltip: true,
         slidesNavigation: true,
 
- //       normalScrollElements: '.sectionnav2', //overflow content if you need use that
         scrollOverflow:true, //overflow content. if you need use that link "github dot com/alvarotrigo/fullPage.js/issues/3497"
- //       autoScrolling:false,
- //       fitToSection: false,
 
         sectionSelector: '.sectionnav'
-        //scrollHorizontally: true,
     });
 
 </script>
