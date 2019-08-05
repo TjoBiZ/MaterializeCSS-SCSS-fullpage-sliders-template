@@ -140,18 +140,18 @@ try {
 //	$mail->SMTPDebug = 2;                                       // Enable verbose debug output // С джейсом объектом будет прилетать дебаг не забывать закоментить на рабочей версии, чтобы не быо JS ошибки.
 	$mail->CharSet = 'UTF-8';
 //	$mail->isSMTP();                                        // Set mailer to use SMTP Enable with SSL 465 port!!!
-//	$mail->Host       = 'smtp.zoho.com';  // Specify main and backup SMTP servers
-//	$mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-//	$mail->Username   = 'info@andamanriviera.com';                     // SMTP username
-//	$mail->Password   = 'A8yFzdphQhZ3';                               // SMTP password Ge8eSFrQT3Vu
-//	$mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted 465 ssl
-//	$mail->Port       = 587;                                    // TCP port to connect tom  465 ssl
-	
-	$mail->Host       = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+	$mail->Host       = 'smtp.zoho.com';  // Specify main and backup SMTP servers
 	$mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-	$mail->Username   = 'lacktic@gmail.com';                     // SMTP username
-	$mail->Password   = 'Generati0n';                               // SMTP password/	$mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
-	$mail->Port       = 587;                                    // TCP port to connect too
+	$mail->Username   = 'info@andamanriviera.com';                     // SMTP username
+	$mail->Password   = 'A8yFzdphQhZ3';                               // SMTP password Ge8eSFrQT3Vu
+	$mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted 465 ssl
+	$mail->Port       = 587;                                    // TCP port to connect tom  465 ssl
+	
+//	$mail->Host       = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+//	$mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+//	$mail->Username   = 'lacktic@gmail.com';                     // SMTP username
+//	$mail->Password   = 'Generati0n';                               // SMTP password/	$mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
+//	$mail->Port       = 587;                                    // TCP port to connect too
 	//Recipients
 	$mail->setFrom('lacktic@gmail.com', 'BOT-Forms');
 	$mail->addAddress('info@andamanriviera.com', 'BOT-Forms');     // Add a recipient

@@ -24,7 +24,7 @@ let cookieValueFirstVisit = document.cookie.replace(/(?:(?:^|.*;\s*)firstvisited
     clearInterval(timerIdJS);
     }, 10000);
 
-let materializesforms = ["OstavitZayavku", "RecordViewingForm", "ConsultantForm", "ConnectManagerForm", "choosearoomForm", "MobileCallBack"]; //let materializesforms = ["FormJSON", "AnotherFormJSON"]; // Перечисляем индификаторы форм, которые нужно обработать.
+let materializesforms = ["RecordViewingForm", "MobileCallBack"]; //let materializesforms = ["FormJSON", "AnotherFormJSON"]; // Перечисляем индификаторы форм, которые нужно обработать.
 
 materializesforms.forEach(function(pagesforms, materializesforms) {
 
@@ -98,6 +98,7 @@ materializesforms.forEach(function(pagesforms, materializesforms) {
         dataf.forEach((value, key) => {arrayformdata[key] = value}); // Преобразуем FormData объект в массив по стандарту ES6
         let jsonformdata = JSON.stringify(arrayformdata); // Полученный массив в JSON Формат
 
+        //console.log(Array.from(dataf));// Посмотреть собранный массив данных с формы
         request.send(jsonformdata); // request.send(dataf); - можно и отправить на сервер зашифрованный FormData объект XHR - 2  версии
     });
 

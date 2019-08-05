@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ac2062c4-6f02-4f68-8aa4-f4159d8c92e5" name="beta.andamanriviera.com" url="https://arcjs.loc">
+        <fileTransfer host="beta.andamanriviera.com" port="22" rootFolder="/var/www/andamanriviera/data/www/beta.andamanriviera.com" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

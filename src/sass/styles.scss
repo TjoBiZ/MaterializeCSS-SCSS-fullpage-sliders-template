@@ -44,10 +44,16 @@ header {
  display: -ms-flexbox;
  display: flex;
 }
+input#icon_telephonemobile { //текст в поле заказа обратного звонка
+ color: white;
+}
+.textwaiting {
+ color: #d0ceca !important;
+}
 //Удалить от сюда
 .htest {
  text-align: center;
- color: white;
+ color: #ffffff;
 }
 .sblock1 {
  background: url("/src/img/jpg/001.jpg");
@@ -154,5 +160,101 @@ header {
   }
  }
  }
+.firstFormAboutUs {
+  background-color: rgba(0, 0, 0, 0.7);
+ .input-field .validate, .materialize-textarea {
+  color: white;
+ }
+ }
+#client .btn {
+ color: black;
+}
 
-//section two
+//section two - new Disign gradient
+
+
+
+
+
+
+/** Call Back mobile phone start **/
+a#callbackbtn {
+ border-radius: 50% !important;
+}
+@-webkit-keyframes rotate{0% {-webkit-transform: rotate(0deg);}4% {-webkit-transform: rotate(-45deg);}8% {-webkit-transform: rotate(0deg);}12% {-webkit-transform: rotate(-45deg);}16% {-webkit-transform: rotate(0deg);}20% {-webkit-transform: rotate(-45deg);}24% {-webkit-transform: rotate(0deg);}100% {-webkit-transform: rotate(0deg);}}
+@-moz-keyframes rotate{0% {-moz-transform: rotate(0deg);}4% {-moz-transform: rotate(-45deg);}8% {-moz-transform: rotate(0deg);}12% {-moz-transform: rotate(-45deg);}16% {-moz-transform: rotate(0deg);}20% {-moz-transform: rotate(-45deg);}24% {-moz-transform: rotate(0deg);}100% {-moz-transform: rotate(0deg);}}
+@keyframes rotate{0% {transform: rotate(0deg);}4% {transform: rotate(-45deg);}8% {transform: rotate(0deg);}12% {transform: rotate(-45deg);}16% {transform: rotate(0deg);}20% {transform: rotate(-45deg);}24% {transform: rotate(0deg);}100% {transform: rotate(0deg);}}
+#MobileCallBack {
+ overflow: hidden;
+ position: relative;
+ width: 100%;
+ padding-bottom: 100%; // пропорции блока определяются здесь
+}
+.wrapMobileCallBack {
+ background: rgba(255, 255, 255, 0.97);
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ -webkit-border-top-left-radius: 100%;
+ -moz-border-radius-topleft: 100%;
+ border-top-left-radius: 100%;
+ border-left: 10px solid #0361fa;
+ border-top: 1px solid #0361fa;
+}
+.windowfixed {
+ position: fixed;
+ bottom: 0px;
+ right: 0px;
+ width: 50%;
+ max-width: 760px;
+ z-index: 100;
+ transform: scale(0) translate(100%, 100%);
+ transition: all 0.3s ease-in-out;
+ @media all and (max-width: 992px) {
+  width: 80%;
+ }
+ @media all and (max-width: 600px) {
+  width: 96%;
+ }
+}
+.windowfixed .btn {
+ overflow: hidden;
+ @media all and (max-width: 600px) {
+  font-size: 6px;
+ }
+}
+.requercallback {
+ margin-top: 20px;
+ line-height: 10px;
+ display: none;
+ font-size: 8px;
+ text-transform: uppercase;
+}
+.phonebtn:hover > svg {
+ display: none;
+}
+.phonebtn:hover > .requercallback {
+ display: block;
+}
+#middleform {
+ width: 100%;
+ margin-top: 50%;
+ @media all and (max-width: 992px) {
+  margin: 30% 5% 0 10%;
+ }
+ @media all and (max-width: 600px) {
+  margin: 25% 3px 0 5%;
+  h3 {
+   font-size: 13px;
+  }
+  .center {
+   font-size: 11px;
+  }
+ }
+}
+#controlphonebtnclose {
+ display: none;
+}
+/** Call Back mobile phone stop **/
