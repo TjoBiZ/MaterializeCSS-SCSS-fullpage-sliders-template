@@ -79,7 +79,7 @@
 <section class="wrapfull">
   <div id="fullpage">
     <div id="firstPage" class="sectionnav sblock1">
-      <div class="row">
+      <div class="row firstcontentproperty">
         <div class="col l6 s12">
           <div class="row">
             <div class="language col s12">
@@ -121,7 +121,29 @@
             </div>
           </div>
         </div>
-        <div class="col l6 s12">Фото спустить в низ. блок во всю высоту окна, дочерний абсолють боттом в ноль (прижать к низу) 6 фотографий!</div>
+        <div class="col l6 s12 row photoimgproperty">
+          <div class="titlephotos col s12">
+            <div class="linephotos">Photos</div>
+          </div>
+          <div class="firstwrapimg col l2 s4">
+            <img src="/build/img/jpg/a01.jpg" alt="">
+          </div>
+          <div class="firstwrapimg col l2 s4">
+            <img src="/build/img/jpg/a02.jpg" alt="">
+          </div>
+          <div class="firstwrapimg col l2 s4">
+            <img src="/build/img/jpg/a03.jpg" alt="">
+          </div>
+          <div class="firstwrapimg col l2 s4">
+            <img src="/build/img/jpg/a04.jpg" alt="">
+          </div>
+          <div class="firstwrapimg col l2 s4">
+            <img src="/build/img/jpg/a05.jpg" alt="">
+          </div>
+          <div class="firstwrapimg col l2 s4">
+            <img src="/build/img/jpg/a06.jpg" alt="">
+          </div>
+        </div>
       </div>
     </div>
     <div id="secondPage" class="sectionnav sblock2"><h1 class="htest">Section  two</h1>
@@ -319,8 +341,8 @@
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.modal');
         var instances = M.Modal.init(elems, {
-            inDuration: 400,
-            outDuration: 300,
+            inDuration: 600,
+            outDuration: 500,
             startingTop: '50%',
             endingTop: '20%',
             opacity: 0.6

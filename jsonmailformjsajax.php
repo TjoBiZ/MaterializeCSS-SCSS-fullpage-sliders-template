@@ -153,7 +153,7 @@ try {
 //	$mail->Password   = 'Generati0n';                               // SMTP password/	$mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
 //	$mail->Port       = 587;                                    // TCP port to connect too
 	//Recipients
-	$mail->setFrom('lacktic@gmail.com', 'BOT-Forms');
+	$mail->setFrom('info@andamanriviera.com', 'BOT-Forms');
 	$mail->addAddress('info@andamanriviera.com', 'BOT-Forms');     // Add a recipient
 //	$mail->addAddress('ellen@example.com');               // Name is optional
 //	$mail->addReplyTo('info@example.com', 'Information');

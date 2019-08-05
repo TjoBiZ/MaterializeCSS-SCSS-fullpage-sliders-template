@@ -50,6 +50,9 @@ input#icon_telephonemobile { //текст в поле заказа обратн�
 .textwaiting {
  color: #d0ceca !important;
 }
+.modal-content {
+ color: lightgray;
+}
 //Удалить от сюда
 .htest {
  text-align: center;
@@ -92,6 +95,29 @@ input#icon_telephonemobile { //текст в поле заказа обратн�
  }
 }
 /** Первый блок **/
+@media all and (min-width: 993px) {
+ .firstcontentproperty {
+  position: relative;
+ }
+ .col.l6.s12.row.photoimgproperty {
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  padding-right: 4%;
+ }
+}
+.linephotos {
+ font-weight: bold;
+ margin: 20px 0;
+ letter-spacing: 0.2em;
+ &:after {
+  outline: 2px solid white;
+  outline-offset: -10px;
+  content: 'A R';
+  color: transparent;
+ }
+}
+
 #firstPage {
  color: white;
  h1 {
@@ -166,6 +192,11 @@ input#icon_telephonemobile { //текст в поле заказа обратн�
   color: white;
  }
  }
+.firstwrapimg {
+ img {
+  width: 100%;
+ }
+}
 #client .btn {
  color: black;
 }
@@ -241,6 +272,7 @@ a#callbackbtn {
 #middleform {
  width: 100%;
  margin-top: 50%;
+ color: lightgray;
  @media all and (max-width: 992px) {
   margin: 30% 5% 0 10%;
  }
