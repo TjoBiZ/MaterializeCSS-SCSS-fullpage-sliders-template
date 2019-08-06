@@ -56,14 +56,14 @@ input#icon_telephonemobile { //текст в поле заказа обратн�
 //Удалить от сюда
 .htest {
  text-align: center;
- color: #ffffff;
+ color: #9785ff;
 }
 .sblock1 {
  background: url("/src/img/jpg/001.jpg");
  background-size: cover;
 }
 .sblock2, .sblock4 {
- background-image: linear-gradient(to right bottom, #315b97, #037cb7, #009ed0, #00c0e1, #12e2eb);
+ background-image: linear-gradient(to bottom, #cdcdcd, rgba(8, 232, 222, 0.14), rgba(255, 225, 92, 0.12), white);
 }
 .sblock3 {
  background: url("/src/img/jpg/003.jpg");
@@ -77,6 +77,7 @@ input#icon_telephonemobile { //текст в поле заказа обратн�
 
 //style fullpage control
 #fp-nav {
+ background: rgba(0, 0, 0, 0.4);
  ul {
   position: relative;
   &:before {
@@ -95,6 +96,17 @@ input#icon_telephonemobile { //текст в поле заказа обратн�
  }
 }
 /** Первый блок **/
+.brandAndamanRiviera {
+ img {
+  width: 160px;
+  margin: 0px 30px 80px;
+ }
+ @media all and (max-width: 993px) {
+  img {
+   margin: 80px 30px 0px;
+  }
+ }
+}
 @media all and (min-width: 993px) {
  .firstcontentproperty {
   position: relative;
@@ -106,23 +118,31 @@ input#icon_telephonemobile { //текст в поле заказа обратн�
   padding-right: 4%;
  }
 }
+.titlephotos {
+ position: relative;
+}
 .linephotos {
  font-weight: bold;
  margin: 20px 0;
  letter-spacing: 0.2em;
  &:after {
-  outline: 2px solid white;
-  outline-offset: -10px;
+  position: absolute;
+  border-bottom: 2px solid white;
+  margin-left: 10px;
+  top: 10px;
   content: 'A R';
   color: transparent;
  }
 }
-
 #firstPage {
  color: white;
+ min-height: 100vh;
  h1 {
-  font-size: 4em !important;
-  margin-top: 0px
+  font-size: 4em;
+  margin-top: 0px;
+  @media all and (max-width: 544px) {
+   font-size: 2em;
+  }
  }
  .language {
   img {
@@ -130,7 +150,17 @@ input#icon_telephonemobile { //текст в поле заказа обратн�
    margin-left: 20px;
   }
   @media all and (max-width: 993px) {
-   margin-top: 80px;
+   margin-top: 105px;
+   img {
+    width: 36px;
+    margin-left: 24px;
+   }
+   @media all and (max-width: 544px) {
+    margin-top: 30px;
+    img {
+     width: 50px;
+    }
+   }
   }
  }
  .apartmentview {
@@ -175,7 +205,7 @@ input#icon_telephonemobile { //текст в поле заказа обратн�
   }
  }
   .linktomap {
-  margin: 30px 0px 0px 34px;
+  margin: 30px 0px 0px 50px;
   border: 1px solid white;
   .bangtaobich {
    font-weight: bold;
@@ -183,6 +213,11 @@ input#icon_telephonemobile { //текст в поле заказа обратн�
   img {
    width: 30px;
    margin: 3px 10px;
+  }
+ }
+ @media all and (min-width: 993px) {
+  .linktomap {
+   margin-top: 160px;
   }
  }
  }
@@ -195,6 +230,7 @@ input#icon_telephonemobile { //текст в поле заказа обратн�
 .firstwrapimg {
  img {
   width: 100%;
+  margin-bottom: 22px;
  }
 }
 #client .btn {
