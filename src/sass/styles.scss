@@ -54,25 +54,22 @@ input#icon_telephonemobile { //текст в поле заказа обратн�
  color: lightgray;
 }
 //Удалить от сюда
-.htest {
- text-align: center;
- color: #9785ff;
-}
 .sblock1 {
  background: url("/src/img/jpg/001.jpg");
  background-size: cover;
 }
 .sblock2, .sblock4 {
+ background: white;
  background-image: linear-gradient(to bottom, #cdcdcd, rgba(8, 232, 222, 0.14), rgba(255, 225, 92, 0.12), white);
 }
-.sblock3 {
- background: url("/src/img/jpg/003.jpg");
- background-size: cover;
-}
-.fullcontentest img {
-  width: 100px;
- height: 100px;
-}
+//.sblock3 {
+// background: url("/src/img/jpg/003.jpg");
+// background-size: cover;
+//}
+//.fullcontentest img {
+//  width: 100px;
+// height: 100px;
+//}
 //Удалить до сюда
 
 //style fullpage control
@@ -95,7 +92,7 @@ input#icon_telephonemobile { //текст в поле заказа обратн�
   border-radius: 0px !important;
  }
 }
-/** Первый блок **/
+/** First section **/
 .brandAndamanRiviera {
  img {
   width: 160px;
@@ -146,7 +143,7 @@ input#icon_telephonemobile { //текст в поле заказа обратн�
  }
  .language {
   img {
-   width: 80px;
+   width: 60px;
    margin-left: 20px;
   }
   @media all and (max-width: 993px) {
@@ -228,21 +225,108 @@ input#icon_telephonemobile { //текст в поле заказа обратн�
  }
  }
 .firstwrapimg {
+ padding: 0.05rem !important;
+ @media all and (max-width: 993px) {
+  padding: 0.2rem !important;
+ }
  img {
   width: 100%;
-  margin-bottom: 22px;
+  margin-bottom: 4px;
+  outline: 1px solid black;
+  outline-offset: -1px;
  }
 }
 #client .btn {
  color: black;
 }
-
+/** Second Section **/
 //section two - new Disign gradient
+#secondPage {
+ .fp-tableCell {
+  display: flex;
+  flex-direction: column;
+ }
+ .aboutapartments {
+  background: rgb(2,0,36);
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(8,232,222,1) 60%, rgba(255,225,92,1) 100%);
+  padding: 40px 0px 50px 0px;
+  color: white;
+  width: 100%;
+  .countap {
+   font-size: 2rem;
+  }
+  .whatinf {
+   font-weight: 100;
+   font-size: 0.8rem;
+  }
+  @media all and (max-width: 993px) {
+   padding: 110px 0px 70px 0px;
+  }
+ }
+ .prof {
+  font-weight: 100;
+  color: gray;
+  font-size: 0.7rem;
+  font-style: italic;
+ }
+ .project {
+  height: 100% !important;
+ }
+ .placeyourself {
+  color: gray;
+ }
+ .listpreference {
+  margin-top: 30px;
+  font-size: 0.8rem;
+  font-weight: 100;
+  img {
+   width: 20px;
+  }
+ }
+}
+//Third section
+.listtableapartment {
+ border: 15px solid #ffe15c;
+ padding: 10px;
+ .highlight {
+  thead {
+   border-bottom: 2px solid #08e8de;
+  }
+ }
+}
 
 
-
-
-
+//section four - with Gooogl map
+#fourthPage {
+  min-height: 100vh;
+ .fp-tableCell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+ }
+ @media all and (max-width: 993px) {
+ .emptyheadfooter {
+  height: 64px;
+  width: 100%;
+ }
+  .backform {
+   margin-top: 40px;
+  }
+ }
+ .address {
+ .wrapcontact {
+  margin: 26px 0px;
+  color: gray;
+ }
+ }
+ .sociallinkproperty {
+  img {
+   width: 24px;
+   margin: 12px 12px 12px 0;
+  }
+ }
+}
 
 /** Call Back mobile phone start **/
 a#callbackbtn {
@@ -326,3 +410,28 @@ a#callbackbtn {
  display: none;
 }
 /** Call Back mobile phone stop **/
+
+
+/** Google Map block **/
+.andamanmap {
+ width: 100%;
+}
+.andamanmap__wrapper {
+ overflow: hidden;
+ position: relative;
+ width: 100%;
+ padding-bottom: 20%; // пропорции блока определяются здесь
+ @media all and (max-width: 992px) {
+  padding-bottom: 70%; // пропорции блок для мобильника определяются здесь
+ }
+}
+.andamanmap__content {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+// outline: 1px dashed red; /* Пунктирная рамка */
+// outline-offset: -1px; /* Выводим рамку внутри элемента */
+}
+/** Google Map block  **/

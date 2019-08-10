@@ -24,7 +24,7 @@ let cookieValueFirstVisit = document.cookie.replace(/(?:(?:^|.*;\s*)firstvisited
     clearInterval(timerIdJS);
     }, 10000);
 
-let materializesforms = ["RecordViewingForm", "MobileCallBack"]; //let materializesforms = ["FormJSON", "AnotherFormJSON"]; // Перечисляем индификаторы форм, которые нужно обработать.
+let materializesforms = ["RecordViewingForm", "backFormEmail", "MobileCallBack"]; //let materializesforms = ["FormJSON", "AnotherFormJSON"]; // Перечисляем индификаторы форм, которые нужно обработать.
 
 materializesforms.forEach(function(pagesforms, materializesforms) {
 
