@@ -53,6 +53,15 @@ input#icon_telephonemobile { //текст в поле заказа обратн�
 .modal-content {
  color: lightgray;
 }
+//Modal window Apartment
+.apartmentmodal {
+ h2, .floorplan, .parart {
+  color: black;
+ }
+ .floorplan, .parart {
+  padding-bottom: 30px;
+ }
+}
 //Удалить от сюда
 .sblock1 {
  background: url("/src/img/jpg/001.jpg");
@@ -202,21 +211,31 @@ input#icon_telephonemobile { //текст в поле заказа обратн�
   }
  }
   .linktomap {
-  margin: 30px 0px 0px 50px;
+  margin: 120px 0px 0px 50px;
   border: 1px solid white;
+   img {
+    width: 30px;
+    margin: 3px 10px;
+    }
+   }
   .bangtaobich {
    font-weight: bold;
-  }
-  img {
-   width: 30px;
-   margin: 3px 10px;
+   color: white;
+   a {
+    color: white;
+    &:visited, &:active {
+     color: white;
+    }
+    &:hover {
+     color: #08e8de;
+    }
+   }
   }
  }
  @media all and (min-width: 993px) {
   .linktomap {
    margin-top: 160px;
   }
- }
  }
 .firstFormAboutUs {
   background-color: rgba(0, 0, 0, 0.7);
@@ -288,13 +307,51 @@ input#icon_telephonemobile { //текст в поле заказа обратн�
 .listtableapartment {
  border: 15px solid #ffe15c;
  padding: 10px;
+ margin-bottom: 30px;
  .highlight {
   thead {
    border-bottom: 2px solid #08e8de;
   }
  }
 }
-
+.stageapartment {
+ .aboutstage {
+  display: flex;
+  flex-direction: row;
+ }
+ .aso3 {
+  opacity: 0.5;
+ }
+ .aso4 {
+  opacity: 0.3;
+ }
+ .wrapstage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .stagear {
+   text-transform: uppercase;
+   font-weight: 100;
+   font-size: 0.8rem;
+   color: gray;
+  }
+  .building {
+   font-weight: bold;
+   font-size: 1.2rem;
+  }
+  .completed {
+   font-weight: 100;
+   font-size: 0.8rem;
+  }
+ }
+ img {
+  width: 60px;
+  margin: 0 10px;
+  @media all and (max-width: 993px) {
+   margin: 20px;
+  }
+ }
+}
 
 //section four - with Gooogl map
 #fourthPage {
