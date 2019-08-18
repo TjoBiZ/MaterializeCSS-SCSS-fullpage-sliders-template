@@ -1,4 +1,3 @@
-// Не забыть про адаптивность. Скрытие блоков на разных размерах.
 function planobj(area) {
     switch (area) {
         case 33.67:
@@ -14,7 +13,7 @@ function planobj(area) {
     }
 }
 function linkPopup(id) {
-    let lp = '<a class="waves-effect waves-light btn-small modal-trigger" data-id="' + id + '" href="#apartment01">DETAIL &#8594;</a>';
+    let lp = '<a class="waves-effect waves-light btn-small modal-trigger" data-id="' + id + '" href="#apartment01"><span class="hide-on-small-and-down">DETAIL </span>&#8594;</a>';
     return lp;
 }
 let apartmentDescripton = [];
@@ -109,19 +108,17 @@ window.onload = () => {
     loadTableData(apartmentsData);
 }
 
-//loadTableData(apartmentsData);
-
  function loadTableData( apartmentsData ) {
     const tableBoby = document.getElementById('tableData');
     let dataHTML = '';
     for (let data of apartmentsData) {
         dataHTML += `<tr>
               <td>${data.apartment}</td>
-              <td>${data.beds}</td>
-              <td>${data.floor}</td>
+              <td class="hide-on-med-and-down">${data.beds}</td>
+              <td class="hide-on-med-and-down">${data.floor}</td>
               <td>${data.area} m<sup><small>2</small></sup></td>
               <td>${data.price}</td>
-              <td>${data.view}</td>
+              <td class="hide-on-small-and-down">${data.view}</td>
               <td>${data.linkpopupwindow}</td>
              </tr>`;
     }
@@ -133,6 +130,26 @@ function sortColumn(columnName) {
     sortDirection = !sortDirection;
 
     switch (dataType) {
-        case number:
+        case "number":
+            sortNumberColumn(sortDirection, columnName);
+            break;
+        case "string":
+            sortStringColumn(sortDirection, columnName);
+            break;
     }
+    loadTableData(apartmentsData);
 }
+
+function sortNumberColumn(sort, columnName) {
+    apartmentsData = apartmentsData.sort((n1, n2) => {
+        return sort ? n1[columnName] - n2[columnName] : n2[columnName] - n1[columnName];
+    })
+}
+
+function sortStringColumn(sort, columnName) {
+    apartmentsData = apartmentsData.sort((s1, s2) => {
+        return sort ? ('' + s1[columnName]).localeCompare(s2[columnName]) : ('' + s2[columnName]).localeCompare(s1[columnName]);
+    })
+}
+
+
