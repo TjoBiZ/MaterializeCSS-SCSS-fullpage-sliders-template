@@ -19,6 +19,7 @@ function linkPopup(id) {
 }
 let apartmentDescripton = [];
 let viewToWindow = [];
+let sortDirection = false;
 
 let apartmentsData = [
     {apartment: 108, beds: 1, floor: 1, area: 33.67, price: 3900003, view: "Forest", linkpopupwindow: linkPopup(108) },
@@ -103,4 +104,35 @@ let apartmentsData = [
     {apartment: 723, beds: 1, floor: 7, area: 52, price: 7540000, view: "Mountain", linkpopupwindow: linkPopup(723) },
     {apartment: 724, beds: 1, floor: 7, area: 52, price: 7540000, view: "Mountain", linkpopupwindow: linkPopup(724) },
 ];
-console.log('test');
+
+window.onload = () => {
+    loadTableData(apartmentsData);
+}
+
+//loadTableData(apartmentsData);
+
+ function loadTableData( apartmentsData ) {
+    const tableBoby = document.getElementById('tableData');
+    let dataHTML = '';
+    for (let data of apartmentsData) {
+        dataHTML += `<tr>
+              <td>${data.apartment}</td>
+              <td>${data.beds}</td>
+              <td>${data.floor}</td>
+              <td>${data.area} m<sup><small>2</small></sup></td>
+              <td>${data.price}</td>
+              <td>${data.view}</td>
+              <td>${data.linkpopupwindow}</td>
+             </tr>`;
+    }
+    tableBoby.innerHTML = dataHTML;
+}
+
+function sortColumn(columnName) {
+    const dataType = typeof apartmentsData[0][columnName];
+    sortDirection = !sortDirection;
+
+    switch (dataType) {
+        case number:
+    }
+}
