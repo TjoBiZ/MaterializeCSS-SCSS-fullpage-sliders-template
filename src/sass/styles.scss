@@ -304,10 +304,32 @@ input#icon_telephonemobile { //текст в поле заказа обратн�
  }
 }
 //Third section
+#thirdPage {
+ h2 {
+  @media all and (max-width: 993px) {
+   margin: 90px 0 30px;
+  }
+ }
+}
 .listtableapartment {
  border: 15px solid #ffe15c;
  padding: 10px;
  margin-bottom: 30px;
+ .sortproperty {
+  background-image: url("/build/img/svg/sortProperty.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  margin-bottom: 5px;
+  transition: 0.4s;
+  cursor: pointer;
+  &:hover {
+   background-color: #ffe15c;
+   background-image: url("/build/img/svg/sortArrowsApartmentProperty.svg");
+   cursor: pointer;
+   transition: 0.5s;
+  }
+ }
  .highlight {
   thead {
    border-bottom: 2px solid #08e8de;
@@ -350,6 +372,9 @@ input#icon_telephonemobile { //текст в поле заказа обратн�
   @media all and (max-width: 993px) {
    margin: 20px;
   }
+ }
+ @media all and (min-width: 993px) {
+  margin: 70px 0;
  }
 }
 

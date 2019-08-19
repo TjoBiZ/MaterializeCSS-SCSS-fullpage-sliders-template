@@ -13,7 +13,7 @@ function planobj(area) {
     }
 }
 function linkPopup(id) {
-    let lp = '<a class="waves-effect waves-light btn-small modal-trigger" data-id="' + id + '" href="#apartment01"><span class="hide-on-small-and-down">DETAIL </span>&#8594;</a>';
+    let lp = '<a class="waves-effect waves-light btn-small modal-trigger" data-id="' + id + '" href="#apartment01"><span class="hide-on-small-and-down clickapart" data-id="' + id + '">DETAIL </span><strong data-id="' + id + '">&#8594;</strong></a>';
     return lp;
 }
 let apartmentDescripton = [];
@@ -104,10 +104,6 @@ let apartmentsData = [
     {apartment: 724, beds: 1, floor: 7, area: 52, price: 7540000, view: "Mountain", linkpopupwindow: linkPopup(724) },
 ];
 
-window.onload = () => {
-    loadTableData(apartmentsData);
-}
-
  function loadTableData( apartmentsData ) {
     const tableBoby = document.getElementById('tableData');
     let dataHTML = '';
@@ -119,7 +115,7 @@ window.onload = () => {
               <td>${data.area} m<sup><small>2</small></sup></td>
               <td>${data.price}</td>
               <td class="hide-on-small-and-down">${data.view}</td>
-              <td>${data.linkpopupwindow}</td>
+              <td class="eventloadinfopopup">${data.linkpopupwindow}</td>
              </tr>`;
     }
     tableBoby.innerHTML = dataHTML;
@@ -150,6 +146,20 @@ function sortStringColumn(sort, columnName) {
     apartmentsData = apartmentsData.sort((s1, s2) => {
         return sort ? ('' + s1[columnName]).localeCompare(s2[columnName]) : ('' + s2[columnName]).localeCompare(s1[columnName]);
     })
+}
+
+window.onload = () => {
+    loadTableData(apartmentsData);
+
+    function clickApartment() {
+        let elementclickareaTableData = event.target;
+        let idapart = elementclickareaTableData.dataset.id;
+        if (idapart > 99) {
+            console.log(idapart);
+            //Логика формирования данных в попап окне.
+        }
+    }
+    document.querySelector('#tableData').onclick = clickApartment;
 }
 
 
