@@ -1069,22 +1069,40 @@
 
 <!-- Modal Structure -->
 <div id="apartment01" class="modal apartmentmodal">
-  <div class="modal-content">
-    <h2>Apartment 01</h2>
-    <div class="price">$10.8900</div>
-    <div class="row">
-      <div class="col l7 s7 apartleft row">
-        <div class="tab col s6 floorplan">Floor plan</div><a href="#">Gallery</a>
-        <img src="/src/img/svg/apartment.svg" class="col offset-s1 s10">
+  <div class="modal-content roominfo">
+    <span>floor <span class="floorapartment"></span></span>
+    <h2>Apartment <span class="numberApartment">108</span></h2>
+    <span class="currency">thb <span class="price">3900003</span></span>
+    <div class="row contproperty">
+      <div class="col l7 s12 apartleft row">
+        <div class="tab col s6 floorplan"><h4>Floor plan</h4></div><h4><a href="#">Gallery</a></h4>
+        <img src="/src/img/svg/apartment.svg" id="planapartment" class="col offset-s1 s10">
       </div>
-      <div class="col l5 s5 apartright">
-        <div class="parart">Parameters</div>
-        <div class="parart">Description</div>
+      <div class="col l5 s12 apartright">
+        <div class="parart">
+          <h4>Parameters</h4>
+          <div class="paroption row">
+            <div class="discrop left-align col s7">Apartment Area</div>
+            <div class="valoption right-align col s5"><span class="apsq">33</span> m<sup><small>2</small></sup></div>
+          </div>
+          <div class="paroption row">
+            <div class="discrop left-align col s2">View</div>
+            <div class="valoption right-align col s10 viewwindow">33m</div>
+          </div>
+          <div class="paroption row">
+            <div class="discrop left-align col s2">Beds</div>
+            <div class="valoption right-align col s10"> 1</div>
+          </div>
+        </div>
+        <div class="parart">
+          <h4>Description</h4>
+          <div class="discrmodal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus alias assumenda atque consectetur deleniti dolore doloremque facilis, hic illum iusto libero maxime, nam necessitatibus non pariatur perspiciatis placeat quaerat quia quo recusandae rem sed sequi similique tenetur veniam voluptatibus! Aliquid asperiores assumenda atque aut consequatur delectus ducimus earum, illum ipsum labore minima nulla provident quod sapiente tempore tenetur ullam.</div>
+        </div>
       </div>
     </div>
   </div>
   <div class="modal-footer">
-    <div class="modal-close waves-effect waves-green btn-flat">Закрыть</div>
+    <div class="modal-close waves-effect waves-yellow btn-flat">Закрыть</div>
   </div>
 </div>
 

@@ -1,13 +1,13 @@
 function planobj(area) {
     switch (area) {
         case 33.67:
-            return "/src/img/svg/apartment3367.svg"
+            return "/build/img/svg/3367.png"
         case 38.2:
-            return "/src/img/svg/apartment382.svg"
+            return "/build/img/svg/382.png"
         case 52:
-            return "/src/img/svg/apartment52.svg"
+            return "/build/img/svg/52.png"
         case 73:
-            return "/src/img/svg/apartment73.svg"
+            return "/build/img/svg/73.png"
         default:
             return '/src/img/svg/apartment.svg';
     }
@@ -156,7 +156,15 @@ window.onload = () => {
         let idapart = elementclickareaTableData.dataset.id;
         if (idapart > 99) {
             console.log(idapart);
+            document.querySelector('.roominfo .numberApartment').innerText = idapart;
+            const showroom = apartmentsData.find(apart => apart.apartment == idapart);
+            document.querySelector('.roominfo .price').innerText = showroom.price;
+            document.querySelector('.roominfo .floorapartment').innerText = showroom.floor;
+            document.querySelector('.roominfo .apsq').innerText = showroom.area;
+            document.querySelector('.roominfo .viewwindow').innerText = showroom.view;
+            document.getElementById('planapartment').src = planobj(showroom.area);//'/build/img/svg/382.svg';
             //Логика формирования данных в попап окне.
+            console.log (showroom);
         }
     }
     document.querySelector('#tableData').onclick = clickApartment;
