@@ -154,6 +154,12 @@ input#icon_telephonemobile { //текст в поле заказа обратн�
   }
  }
  .language {
+  .flag{
+   cursor: pointer;
+   &:hover, &:active {
+    cursor: pointer;
+   }
+  }
   img {
    width: 60px;
    margin-left: 20px;
