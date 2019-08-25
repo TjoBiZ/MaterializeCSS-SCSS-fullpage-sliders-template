@@ -117,7 +117,7 @@
                       Так же мы предлагаем гарантированный доход в виде 24% за 3 года.
                       Окончание строительства осенью 2020 года.
                     </div>
-                    <a class="waves-effect waves-white btn-large modal-trigger apartmentview white" href="#client">Задать вопрос</a>
+                    <a class="waves-effect waves-white btn-large modal-trigger apartmentview white lang" href="#client" data-lan="btnaskquestion">Задать вопрос</a>
                   </div>
                 </div>
               </div>
@@ -1159,7 +1159,11 @@
 </script>
 
 <script>
-    changelanguage();
+    document.addEventListener("DOMContentLoaded", ready);
+    function ready() {
+        console.log('страница загружена')
+        changelanguage();
+    }
 </script>
 
 <script>
