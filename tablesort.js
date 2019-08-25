@@ -162,7 +162,9 @@ window.onload = () => {
             document.querySelector('.roominfo .floorapartment').innerText = showroom.floor;
             document.querySelector('.roominfo .apsq').innerText = showroom.area;
             document.querySelector('.roominfo .viewwindow').innerText = showroom.view;
-            document.getElementById('planapartment').src = planobj(showroom.area);//'/build/img/svg/382.svg';
+            document.getElementById('planapartment').src = planobj(showroom.area);
+            document.getElementById('galaryrooms').href = '/' + Math.trunc((showroom.area)*100) + '/';
+            //console.log(showroom.area.match(r).map(Number));
             //Логика формирования данных в попап окне.
             console.log (showroom);
         }
