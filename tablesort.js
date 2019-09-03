@@ -20,100 +20,120 @@ let apartmentDescripton = [];
 let viewToWindow = [];
 let sortDirection = false;
 
+function ApartRoom (apartment, beds, floor, area, price, view, linkPopup) {
+    this.apartment = apartment;
+    this.beds = beds;
+    this.floor = floor;
+    this.area = area;
+    this.price = price;
+    this.view = view;
+    this.linkpopupwindow = linkPopup;
+}
+ApartRoom.prototype.convertCurrency = function() {
+    return this.price * currencythbphpcron.thbrub;
+}
+ApartRoom.prototype.basement = true;
+
 let apartmentsData = [
-    {apartment: 108, beds: 1, floor: 1, area: 33.67, price: 3900003, view: "Forest", linkpopupwindow: linkPopup(108) },
-    {apartment: 109, beds: 1, floor: 1, area: 33.67, price: 3900003, view: "Forest", linkpopupwindow: linkPopup(109) },
-    {apartment: 202, beds: 1, floor: 2, area: 33.67, price: 4246460, view: "Pool", linkpopupwindow: linkPopup(202) },
-    {apartment: 207, beds: 1, floor: 2, area: 38.2, price: 5139000, view: "Garden", linkpopupwindow: linkPopup(207) },
-    {apartment: 327, beds: 1, floor: 3, area: 73, price: 8724960, view: "Forest", linkpopupwindow: linkPopup(327) },
-    {apartment: 328, beds: 1, floor: 3, area: 73, price: 8724960, view: "Forest", linkpopupwindow: linkPopup(328) },
-    {apartment: 329, beds: 1, floor: 3, area: 52, price: 7240007, view: "Mountain", linkpopupwindow: linkPopup(329) },
-    {apartment: 330, beds: 1, floor: 3, area: 52, price: 7240007, view: "Mountain", linkpopupwindow: linkPopup(330) },
-    {apartment: 401, beds: 1, floor: 4, area: 33.67, price: 4446460, view: "Seaview", linkpopupwindow: linkPopup(401) },
-    {apartment: 402, beds: 1, floor: 4, area: 33.67, price: 4446460, view: "Seaview", linkpopupwindow: linkPopup(402) },
-    {apartment: 403, beds: 1, floor: 4, area: 33.67, price: 4446460, view: "Seaview", linkpopupwindow: linkPopup(403) },
-    {apartment: 404, beds: 1, floor: 4, area: 33.67, price: 4446460, view: "Seaview", linkpopupwindow: linkPopup(404) },
-    {apartment: 405, beds: 1, floor: 4, area: 33.67, price: 4446460, view: "Seaview", linkpopupwindow: linkPopup(405) },
-    {apartment: 406, beds: 1, floor: 4, area: 33.67, price: 4446460, view: "Seaview", linkpopupwindow: linkPopup(406) },
-    {apartment: 407, beds: 1, floor: 4, area: 38.2, price: 5339000, view: "Forest", linkpopupwindow: linkPopup(407) },
-    {apartment: 408, beds: 1, floor: 4, area: 33.67, price: 4077100, view: "Forest", linkpopupwindow: linkPopup(408) },
-    {apartment: 409, beds: 1, floor: 4, area: 33.67, price: 4077100, view: "Forest", linkpopupwindow: linkPopup(409) },
-    {apartment: 410, beds: 1, floor: 4, area: 33.67, price: 4077100, view: "Forest", linkpopupwindow: linkPopup(410) },
-    {apartment: 411, beds: 1, floor: 4, area: 33.67, price: 4077100, view: "Forest", linkpopupwindow: linkPopup(411) },
-    {apartment: 420, beds: 1, floor: 4, area: 38.2, price: 5148000, view: "Forest", linkpopupwindow: linkPopup(420) },
-    {apartment: 421, beds: 1, floor: 4, area: 33.67, price: 4446460, view: "Mountain", linkpopupwindow: linkPopup(421) },
-    {apartment: 422, beds: 1, floor: 4, area: 33.67, price: 4446460, view: "Mountain", linkpopupwindow: linkPopup(422) },
-    {apartment: 423, beds: 1, floor: 4, area: 33.67, price: 4446460, view: "Mountain", linkpopupwindow: linkPopup(423) },
-    {apartment: 424, beds: 1, floor: 4, area: 33.67, price: 4446460, view: "Mountain", linkpopupwindow: linkPopup(424) },
-    {apartment: 425, beds: 1, floor: 4, area: 33.67, price: 4446460, view: "Mountain", linkpopupwindow: linkPopup(425) },
-    {apartment: 426, beds: 1, floor: 4, area: 33.67, price: 4446460, view: "Mountain", linkpopupwindow: linkPopup(426) },
-    {apartment: 427, beds: 1, floor: 4, area: 73, price: 8824970, view: "Forest", linkpopupwindow: linkPopup(427) },
-    {apartment: 428, beds: 1, floor: 4, area: 73, price: 8824970, view: "Forest", linkpopupwindow: linkPopup(428) },
-    {apartment: 508, beds: 1, floor: 5, area: 33.67, price: 4177100, view: "Forest", linkpopupwindow: linkPopup(508) },
-    {apartment: 509, beds: 1, floor: 5, area: 33.67, price: 4177100, view: "Forest", linkpopupwindow: linkPopup(509) },
-    {apartment: 511, beds: 1, floor: 5, area: 33.67, price: 4177100, view: "Forest", linkpopupwindow: linkPopup(511) },
-    {apartment: 512, beds: 1, floor: 5, area: 33.67, price: 4177100, view: "Forest", linkpopupwindow: linkPopup(512) },
-    {apartment: 513, beds: 1, floor: 5, area: 33.67, price: 4177100, view: "Forest", linkpopupwindow: linkPopup(513) },
-    {apartment: 515, beds: 1, floor: 5, area: 33.67, price: 4177100, view: "Forest", linkpopupwindow: linkPopup(515) },
-    {apartment: 523, beds: 1, floor: 5, area: 33.67, price: 4546460, view: "Mountain", linkpopupwindow: linkPopup(523) },
-    {apartment: 524, beds: 1, floor: 5, area: 33.67, price: 4546460, view: "Mountain", linkpopupwindow: linkPopup(524) },
-    {apartment: 525, beds: 1, floor: 5, area: 33.67, price: 4546460, view: "Mountain", linkpopupwindow: linkPopup(525) },
-    {apartment: 526, beds: 1, floor: 5, area: 33.67, price: 4546460, view: "Mountain", linkpopupwindow: linkPopup(526) },
-    {apartment: 527, beds: 1, floor: 5, area: 73, price: 8924987, view: "Forest", linkpopupwindow: linkPopup(527) },
-    {apartment: 528, beds: 1, floor: 5, area: 73, price: 8924987, view: "Forest", linkpopupwindow: linkPopup(528) },
-    {apartment: 529, beds: 1, floor: 5, area: 52, price: 7440004, view: "Mountain", linkpopupwindow: linkPopup(529) },
-    {apartment: 530, beds: 1, floor: 5, area: 52, price: 7440004, view: "Mountain", linkpopupwindow: linkPopup(530) },
-    {apartment: 603, beds: 1, floor: 6, area: 33.67, price: 4646460, view: "Seaview", linkpopupwindow: linkPopup(603) },
-    {apartment: 604, beds: 1, floor: 6, area: 33.67, price: 4646460, view: "Seaview", linkpopupwindow: linkPopup(604) },
-    {apartment: 608, beds: 1, floor: 6, area: 33.67, price: 4277100, view: "Forest", linkpopupwindow: linkPopup(608) },
-    {apartment: 609, beds: 1, floor: 6, area: 33.67, price: 4277100, view: "Forest", linkpopupwindow: linkPopup(609) },
-    {apartment: 610, beds: 1, floor: 6, area: 33.67, price: 4277100, view: "Forest", linkpopupwindow: linkPopup(610) },
-    {apartment: 611, beds: 1, floor: 6, area: 33.67, price: 4277100, view: "Forest", linkpopupwindow: linkPopup(611) },
-    {apartment: 612, beds: 1, floor: 6, area: 33.67, price: 4277100, view: "Forest", linkpopupwindow: linkPopup(612) },
-    {apartment: 613, beds: 1, floor: 6, area: 33.67, price: 4277100, view: "Forest", linkpopupwindow: linkPopup(613) },
-    {apartment: 614, beds: 1, floor: 6, area: 33.67, price: 4277100, view: "Forest", linkpopupwindow: linkPopup(614) },
-    {apartment: 615, beds: 1, floor: 6, area: 33.67, price: 4277100, view: "Forest", linkpopupwindow: linkPopup(615) },
-    {apartment: 616, beds: 1, floor: 6, area: 33.67, price: 4277100, view: "Forest", linkpopupwindow: linkPopup(616) },
-    {apartment: 621, beds: 1, floor: 6, area: 33.67, price: 4646460, view: "Mountain", linkpopupwindow: linkPopup(621) },
-    {apartment: 622, beds: 1, floor: 6, area: 33.67, price: 4646460, view: "Mountain", linkpopupwindow: linkPopup(622) },
-    {apartment: 624, beds: 1, floor: 6, area: 33.67, price: 4646460, view: "Mountain", linkpopupwindow: linkPopup(624) },
-    {apartment: 625, beds: 1, floor: 6, area: 33.67, price: 4646460, view: "Mountain", linkpopupwindow: linkPopup(625) },
-    {apartment: 626, beds: 1, floor: 6, area: 33.67, price: 4646460, view: "Mountain", linkpopupwindow: linkPopup(626) },
-    {apartment: 627, beds: 1, floor: 6, area: 73, price: 9024990, view: "Forest", linkpopupwindow: linkPopup(627) },
-    {apartment: 628, beds: 1, floor: 6, area: 73, price: 9024990, view: "Forest", linkpopupwindow: linkPopup(628) },
-    {apartment: 629, beds: 1, floor: 6, area: 52, price: 7540000, view: "Mountain", linkpopupwindow: linkPopup(629) },
-    {apartment: 630, beds: 1, floor: 6, area: 52, price: 7540000, view: "Mountain", linkpopupwindow: linkPopup(630) },
-    {apartment: 701, beds: 1, floor: 7, area: 33.67, price: 4377100, view: "Pool", linkpopupwindow: linkPopup(701) },
-    {apartment: 702, beds: 1, floor: 7, area: 33.67, price: 4377100, view: "Pool", linkpopupwindow: linkPopup(702) },
-    {apartment: 703, beds: 1, floor: 7, area: 33.67, price: 4377100, view: "Pool", linkpopupwindow: linkPopup(703) },
-    {apartment: 704, beds: 1, floor: 7, area: 33.67, price: 4377100, view: "Pool", linkpopupwindow: linkPopup(704) },
-    {apartment: 705, beds: 1, floor: 7, area: 33.67, price: 4377100, view: "Pool", linkpopupwindow: linkPopup(705) },
-    {apartment: 706, beds: 1, floor: 7, area: 33.67, price: 4377100, view: "Pool", linkpopupwindow: linkPopup(706) },
-    {apartment: 708, beds: 1, floor: 7, area: 33.67, price: 4377100, view: "Forest", linkpopupwindow: linkPopup(708) },
-    {apartment: 709, beds: 1, floor: 7, area: 33.67, price: 4377100, view: "Forest", linkpopupwindow: linkPopup(709) },
-    {apartment: 710, beds: 1, floor: 7, area: 33.67, price: 4377100, view: "Forest", linkpopupwindow: linkPopup(710) },
-    {apartment: 711, beds: 1, floor: 7, area: 33.67, price: 4377100, view: "Forest", linkpopupwindow: linkPopup(711) },
-    {apartment: 712, beds: 1, floor: 7, area: 33.67, price: 4377100, view: "Forest", linkpopupwindow: linkPopup(712) },
-    {apartment: 713, beds: 1, floor: 7, area: 33.67, price: 4377100, view: "Forest", linkpopupwindow: linkPopup(713) },
-    {apartment: 716, beds: 1, floor: 7, area: 33.67, price: 4646460, view: "Mountain", linkpopupwindow: linkPopup(716) },
-    {apartment: 717, beds: 1, floor: 7, area: 33.67, price: 4646460, view: "Mountain", linkpopupwindow: linkPopup(717) },
-    {apartment: 720, beds: 1, floor: 7, area: 33.67, price: 4646460, view: "Mountain", linkpopupwindow: linkPopup(720) },
-    {apartment: 721, beds: 1, floor: 7, area: 73, price: 9125000, view: "Forest", linkpopupwindow: linkPopup(721) },
-    {apartment: 722, beds: 1, floor: 7, area: 73, price: 9125000, view: "Forest", linkpopupwindow: linkPopup(722) },
-    {apartment: 723, beds: 1, floor: 7, area: 52, price: 7540000, view: "Mountain", linkpopupwindow: linkPopup(723) },
-    {apartment: 724, beds: 1, floor: 7, area: 52, price: 7540000, view: "Mountain", linkpopupwindow: linkPopup(724) },
+    new ApartRoom( 108, 1, 1, 33.67, 3900003, "Forest", linkPopup(108) ),
+    new ApartRoom( 109, 1, 1, 33.67, 3900003, "Forest", linkPopup(109) ),
+    new ApartRoom( 202, 1, 2, 33.67, 4246460, "Pool", linkPopup(202) ),
+    new ApartRoom( 207, 1, 2, 38.2, 5139000, "Garden", linkPopup(207) ),
+    new ApartRoom( 327, 1, 3, 73, 8724960, "Forest", linkPopup(327) ),
+    new ApartRoom( 328, 1, 3, 73, 8724960, "Forest", linkPopup(328) ),
+    new ApartRoom( 329, 1, 3, 52, 7240007, "Mountain", linkPopup(329) ),
+    new ApartRoom( 330, 1, 3, 52, 7240007, "Mountain", linkPopup(330) ),
+    new ApartRoom( 401, 1, 4, 33.67, 4446460, "Seaview", linkPopup(401) ),
+    new ApartRoom( 402, 1, 4, 33.67, 4446460, "Seaview", linkPopup(402) ),
+    new ApartRoom( 403, 1, 4, 33.67, 4446460, "Seaview", linkPopup(403) ),
+    new ApartRoom( 404, 1, 4, 33.67, 4446460, "Seaview", linkPopup(404) ),
+    new ApartRoom( 405, 1, 4, 33.67, 4446460, "Seaview", linkPopup(405) ),
+    new ApartRoom( 406, 1, 4, 33.67, 4446460, "Seaview", linkPopup(406) ),
+    new ApartRoom( 407, 1, 4, 38.2, 5339000, "Forest", linkPopup(407) ),
+    new ApartRoom( 408, 1, 4, 33.67, 4077100, "Forest", linkPopup(408) ),
+    new ApartRoom( 409, 1, 4, 33.67, 4077100, "Forest", linkPopup(409) ),
+    new ApartRoom( 410, 1, 4, 33.67, 4077100, "Forest", linkPopup(410) ),
+    new ApartRoom( 411, 1, 4, 33.67, 4077100, "Forest", linkPopup(411) ),
+    new ApartRoom( 420, 1, 4, 38.2, 5148000, "Forest", linkPopup(420) ),
+    new ApartRoom( 421, 1, 4, 33.67, 4446460, "Mountain", linkPopup(421) ),
+    new ApartRoom( 422, 1, 4, 33.67, 4446460, "Mountain", linkPopup(422) ),
+    new ApartRoom( 423, 1, 4, 33.67, 4446460, "Mountain", linkPopup(423) ),
+    new ApartRoom( 424, 1, 4, 33.67, 4446460, "Mountain", linkPopup(424) ),
+    new ApartRoom( 425, 1, 4, 33.67, 4446460, "Mountain", linkPopup(425) ),
+    new ApartRoom( 426, 1, 4, 33.67, 4446460, "Mountain", linkPopup(426) ),
+    new ApartRoom( 427, 1, 4, 73, 8824970, "Forest", linkPopup(427) ),
+    new ApartRoom( 428, 1, 4, 73, 8824970, "Forest", linkPopup(428) ),
+    new ApartRoom( 508, 1, 5, 33.67, 4177100, "Forest", linkPopup(508) ),
+    new ApartRoom( 509, 1, 5, 33.67, 4177100, "Forest", linkPopup(509) ),
+    new ApartRoom( 511, 1, 5, 33.67, 4177100, "Forest", linkPopup(511) ),
+    new ApartRoom( 512, 1, 5, 33.67, 4177100, "Forest", linkPopup(512) ),
+    new ApartRoom( 513, 1, 5, 33.67, 4177100, "Forest", linkPopup(513) ),
+    new ApartRoom( 515, 1, 5, 33.67, 4177100, "Forest", linkPopup(515) ),
+    new ApartRoom( 523, 1, 5, 33.67, 4546460, "Mountain", linkPopup(523) ),
+    new ApartRoom( 524, 1, 5, 33.67, 4546460, "Mountain", linkPopup(524) ),
+    new ApartRoom( 525, 1, 5, 33.67, 4546460, "Mountain", linkPopup(525) ),
+    new ApartRoom( 526, 1, 5, 33.67, 4546460, "Mountain", linkPopup(526) ),
+    new ApartRoom( 527, 1, 5, 73, 8924987, "Forest", linkPopup(527) ),
+    new ApartRoom( 528, 1, 5, 73, 8924987, "Forest", linkPopup(528) ),
+    new ApartRoom( 529, 1, 5, 52, 7440004, "Mountain", linkPopup(529) ),
+    new ApartRoom( 530, 1, 5, 52, 7440004, "Mountain", linkPopup(530) ),
+    new ApartRoom( 603, 1, 6, 33.67, 4646460, "Seaview", linkPopup(603) ),
+    new ApartRoom( 604, 1, 6, 33.67, 4646460, "Seaview", linkPopup(604) ),
+    new ApartRoom( 608, 1, 6, 33.67, 4277100, "Forest", linkPopup(608) ),
+    new ApartRoom( 609, 1, 6, 33.67, 4277100, "Forest", linkPopup(609) ),
+    new ApartRoom( 610, 1, 6, 33.67, 4277100, "Forest", linkPopup(610) ),
+    new ApartRoom( 611, 1, 6, 33.67, 4277100, "Forest", linkPopup(611) ),
+    new ApartRoom( 612, 1, 6, 33.67, 4277100, "Forest", linkPopup(612) ),
+    new ApartRoom( 613, 1, 6, 33.67, 4277100, "Forest", linkPopup(613) ),
+    new ApartRoom( 614, 1, 6, 33.67, 4277100, "Forest", linkPopup(614) ),
+    new ApartRoom( 615, 1, 6, 33.67, 4277100, "Forest", linkPopup(615) ),
+    new ApartRoom( 616, 1, 6, 33.67, 4277100, "Forest", linkPopup(616) ),
+    new ApartRoom( 621, 1, 6, 33.67, 4646460, "Mountain", linkPopup(621) ),
+    new ApartRoom( 622, 1, 6, 33.67, 4646460, "Mountain", linkPopup(622) ),
+    new ApartRoom( 624, 1, 6, 33.67, 4646460, "Mountain", linkPopup(624) ),
+    new ApartRoom( 625, 1, 6, 33.67, 4646460, "Mountain", linkPopup(625) ),
+    new ApartRoom( 626, 1, 6, 33.67, 4646460, "Mountain", linkPopup(626) ),
+    new ApartRoom( 627, 1, 6, 73, 9024990, "Forest", linkPopup(627) ),
+    new ApartRoom( 628, 1, 6, 73, 9024990, "Forest", linkPopup(628) ),
+    new ApartRoom( 629, 1, 6, 52, 7540000, "Mountain", linkPopup(629) ),
+    new ApartRoom( 630, 1, 6, 52, 7540000, "Mountain", linkPopup(630) ),
+    new ApartRoom( 701, 1, 7, 33.67, 4377100, "Pool", linkPopup(701) ),
+    new ApartRoom( 702, 1, 7, 33.67, 4377100, "Pool", linkPopup(702) ),
+    new ApartRoom( 703, 1, 7, 33.67, 4377100, "Pool", linkPopup(703) ),
+    new ApartRoom( 704, 1, 7, 33.67, 4377100, "Pool", linkPopup(704) ),
+    new ApartRoom( 705, 1, 7, 33.67, 4377100, "Pool", linkPopup(705) ),
+    new ApartRoom( 706, 1, 7, 33.67, 4377100, "Pool", linkPopup(706) ),
+    new ApartRoom( 708, 1, 7, 33.67, 4377100, "Forest", linkPopup(708) ),
+    new ApartRoom( 709, 1, 7, 33.67, 4377100, "Forest", linkPopup(709) ),
+    new ApartRoom( 710, 1, 7, 33.67, 4377100, "Forest", linkPopup(710) ),
+    new ApartRoom( 711, 1, 7, 33.67, 4377100, "Forest", linkPopup(711) ),
+    new ApartRoom( 712, 1, 7, 33.67, 4377100, "Forest", linkPopup(712) ),
+    new ApartRoom( 713, 1, 7, 33.67, 4377100, "Forest", linkPopup(713) ),
+    new ApartRoom( 716, 1, 7, 33.67, 4646460, "Mountain", linkPopup(716) ),
+    new ApartRoom( 717, 1, 7, 33.67, 4646460, "Mountain", linkPopup(717) ),
+    new ApartRoom( 720, 1, 7, 33.67, 4646460, "Mountain", linkPopup(720) ),
+    new ApartRoom( 721, 1, 7, 73, 9125000, "Forest", linkPopup(721) ),
+    new ApartRoom( 722, 1, 7, 73, 9125000, "Forest", linkPopup(722) ),
+    new ApartRoom( 723, 1, 7, 52, 7540000, "Mountain", linkPopup(723) ),
+    new ApartRoom( 724, 1, 7, 52, 7540000, "Mountain", linkPopup(724) ),
 ];
+// apartmentsData.object().prototype.firstProto = function (  ) {
+//     return console.log(this.area + this.apartment);
+// }
 
  function loadTableData( apartmentsData ) {
     const tableBoby = document.getElementById('tableData');
     let dataHTML = '';
     for (let data of apartmentsData) {
+    //     data.convertcurrency = function () {
+    //         return this.price * currencythbphpcron.thbrub
+    //     };
         dataHTML += `<tr>
               <td>${data.apartment}</td>
               <td class="hide-on-med-and-down">${data.beds}</td>
               <td class="hide-on-med-and-down">${data.floor}</td>
               <td>${data.area} m<sup><small>2</small></sup></td>
-              <td>${data.price}</td>
+              <td>${data.convertCurrency()}</td>
               <td class="hide-on-small-and-down">${data.view}</td>
               <td class="eventloadinfopopup">${data.linkpopupwindow}</td>
              </tr>`;

@@ -7,7 +7,7 @@ var arrLang = {
     },
     'ru': {
         'about': 'О компании',
-        'descriptiongoal': 'Элитный комплекс Andaman Rivera<br>\n' +
+        'descriptiongoal': 'Элитный комплекс Andaman Rivera <br>\n' +
             ' Предлагаем вам варианты апартаментов площадью от 33.67 - 54.04 кв.м. Цены от 3.хх млн. Тайских Бат, включая высококачественную отделку с использованием дорогих и качественных материалов. Так же мы предлагаем гарантированный доход в виде 24% за 3 года. Окончание строительства осенью 2020 года.',
         'btnaskquestion': 'Задать вопрос'
     },
@@ -40,6 +40,11 @@ document.querySelector('#language').onclick = function (event) {
 
 function changelanguage() {
     let fl =  document.cookie.replace(/(?:(?:^|.*;\s*)lang\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+     if (fl == '') {
+         fl = navigator.language.match(/^.{2}/g)[0];
+         document.cookie = "lang=" + fl + "; domain=." + document.domain + "; path=/; expires=Thu, 01 Jan 2030 00:00:00 UTC;";
+         //сделать switch, для языка по умолчанию при первой загрузке и автоматическом выборе
+     }
     document.querySelectorAll('.lang').forEach(function(element) {
         //       console.log(element.dataset.lan);
         element.innerHTML = arrLang[fl][element.dataset.lan];
