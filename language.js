@@ -30,7 +30,7 @@ var arrLang = {
 // event click flag and cookie
 document.querySelector('#language').onclick = function (event) {
         document.querySelectorAll('.flag').forEach(function(flag) {
-            if (flag.id == event.target.id) {
+            if (flag.id === event.target.id) {
                 document.cookie = "lang=" + flag.id + "; domain=." + document.domain + "; path=/; expires=Thu, 01 Jan 2030 00:00:00 UTC;";
                 return changelanguage();
             }
@@ -40,8 +40,18 @@ document.querySelector('#language').onclick = function (event) {
 
 function changelanguage() {
     let fl =  document.cookie.replace(/(?:(?:^|.*;\s*)lang\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-     if (fl == '') {
-         fl = navigator.language.match(/^.{2}/g)[0];
+     if (fl === '') { //firsts visit site choose local language groupe
+         fl = (navigator.language.match(/^.{2}/g)[0]).toLocaleLowerCase();
+         switch (true) {
+             case fl === 'ru' || 'hy' || 'am' || 'az' || 'be' || 'by' || 'et' || 'ee' || 'kk' || 'kz' || 'lv' || 'tg' || 'cyrl' || 'tt' || 'uk' || 'ua' || 'uz':
+                 return fl = 'ru';
+             case fl === 'en' || 'us' || 'gb' || 'au' || 'ca' || 'jm' || 'nz' || 'ph'|| 'fil' || 'cg' || 'za'|| 'ga' || 'ie' || 'mi':
+                 return fl = 'us';
+             case fl === 'ch' || 'cn' || 'zh' || 'tw':
+                 return fl = 'ch';
+             default:
+                 return fl = 'us';
+         }
          document.cookie = "lang=" + fl + "; domain=." + document.domain + "; path=/; expires=Thu, 01 Jan 2030 00:00:00 UTC;";
          //сделать switch, для языка по умолчанию при первой загрузке и автоматическом выборе
      }
