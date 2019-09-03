@@ -13,7 +13,7 @@ function planobj(area) {
     }
 }
 function linkPopup(id) {
-    let lp = '<a class="waves-effect waves-light btn-small modal-trigger" data-id="' + id + '" href="#apartment01"><span class="hide-on-small-and-down clickapart" data-id="' + id + '">DETAIL </span><strong data-id="' + id + '">&#8594;</strong></a>';
+    let lp = '<a class="waves-effect waves-light btn-small modal-trigger" data-id="' + id + '" href="#apartment01"><span class="hide-on-small-and-down clickapart lang" data-id="' + id + '" data-lan="tbdetail">DETAIL </span><strong data-id="' + id + '">&#8594;</strong></a>';
     return lp;
 }
 let apartmentDescripton = [];
@@ -29,10 +29,30 @@ function ApartRoom (apartment, beds, floor, area, price, view, linkPopup) {
     this.view = view;
     this.linkpopupwindow = linkPopup;
 }
-ApartRoom.prototype.convertCurrency = function() {
-    return this.price * currencythbphpcron.thbrub;
+ApartRoom.prototype.convertCurrency = function() { // конвертируем в нужную валюту в зависимости от языка
+    let flagcurrency =  document.cookie.replace(/(?:(?:^|.*;\s*)lang\s*\=\s*([^;]*).*$)|^.*$/, "$1"); //From language.js file what language need choose cookie or navigator.language. return fl variable with language
+    let priceconv = this.price;
+    switch (true) {
+        case flagcurrency === 'ru':
+            let rub = ((Math.ceil(this.price * currencythbphpcron.thbrub))/1000);
+            priceconv = (Math.ceil(rub + rub*2/100))*1000;
+            break;
+        case flagcurrency === 'us':
+            let usd = ((Math.ceil(this.price * currencythbphpcron.thbusd))/100);
+            priceconv = (Math.ceil(usd + usd*2/100))*100;
+            break;
+        case flagcurrency === 'ch':
+            let cny = ((Math.ceil(this.price * currencythbphpcron.thbcny))/100);
+            priceconv = (Math.ceil(cny + cny*2/100))*100;
+            break;
+        case flagcurrency === 'th':
+            priceconv = this.price;
+            break;
+            default:
+            break;
+    }
+    return priceconv;
 }
-ApartRoom.prototype.basement = true;
 
 let apartmentsData = [
     new ApartRoom( 108, 1, 1, 33.67, 3900003, "Forest", linkPopup(108) ),
@@ -125,9 +145,6 @@ let apartmentsData = [
     const tableBoby = document.getElementById('tableData');
     let dataHTML = '';
     for (let data of apartmentsData) {
-    //     data.convertcurrency = function () {
-    //         return this.price * currencythbphpcron.thbrub
-    //     };
         dataHTML += `<tr>
               <td>${data.apartment}</td>
               <td class="hide-on-med-and-down">${data.beds}</td>
@@ -190,6 +207,8 @@ window.onload = () => {
         }
     }
     document.querySelector('#tableData').onclick = clickApartment;
+    //document.querySelector('#tableData').addEventListener("onclick", clickApartment(), false)
 }
+
 
 
